@@ -1,1 +1,1 @@
-# spring-boot-best-practice
+# spring-boot-lab
