@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://maven.apache.org/POM/4.0.0"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <artifactId>spring-boot-lab</artifactId>
-    <description>Spring Boot 实验室</description>
-
-    <groupId>com.inlym.lab</groupId>
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <name>${project.artifactId}</name>
+    <groupId>com.inlym.lab</groupId>
+    <artifactId>spring-boot-lab</artifactId>
+    <version>1.0.0</version>
 
     <packaging>pom</packaging>
 
+    <modules>
+        <module>spring-boot-lab-hello</module>
+    </modules>
+
+    <name>${project.artifactId}</name>
+    <description>Spring Boot 实验室</description>
+    <url>https://github.com/inlym/spring-boot-lab</url>
+
     <parent>
-        <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <relativePath/>
+        <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.5.0</version>
+        <relativePath/>
     </parent>
 
     <properties>
@@ -27,7 +33,5 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
-
-    <version>1.0.0</version>
 
 </project>
