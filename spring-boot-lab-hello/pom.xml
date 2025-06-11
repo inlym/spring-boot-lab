@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>spring-boot-lab-hello</artifactId>
-    <version>1.0.0</version>
 
     <packaging>jar</packaging>
 
