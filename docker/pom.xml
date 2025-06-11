@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.inlym.lab</groupId>
+        <artifactId>spring-boot-lab</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>spring-boot-lab-docker</artifactId>
+
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+    <description>演示如何打包为 Docker 镜像以及推送至远程仓库</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <!-- 设置构建的 jar 包名 -->
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!-- 使用 Jib 插件构建并推送 Docker 镜像 -->
+            <!-- 文档地址：https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.5</version>
+                <configuration>
+                    <from>
+                        <image>mcr.microsoft.com/openjdk/jdk:21-ubuntu</image>
+                    </from>
+                    <to>
+                        <image>registry.cn-hangzhou.aliyuncs.com/inlym/spring-boot-lab-docker</image>
+                        <auth>
+                            <username>xxxxxx</username>
+                            <password>xxxxxx</password>
+                        </auth>
+                    </to>
+                    <container>
+                        <mainClass>com.inlym.lab.docker.DockerApplication</mainClass>
+                        <ports>
+                            <port>8080</port>
+                        </ports>
+                    </container>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
