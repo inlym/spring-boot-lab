@@ -11,9 +11,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-boot-lab-hello</module>
         <module>spring-boot-lab-validation</module>
         <module>docker</module>
+        <module>hello</module>
     </modules>
 
     <name>${project.artifactId}</name>

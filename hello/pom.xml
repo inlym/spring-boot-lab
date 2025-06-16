@@ -14,12 +14,18 @@
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
-    <description>基本使用展示</description>
+    <description>演示最基础的 Spring Boot 项目</description>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
     </dependencies>
