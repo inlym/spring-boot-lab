@@ -42,10 +42,14 @@
                 <version>3.4.5</version>
                 <configuration>
                     <from>
-                        <image>mcr.microsoft.com/openjdk/jdk:21-ubuntu</image>
+                        <!-- 使用官方的 OpenJDK，此处使用 21 版本 -->
+                        <image>openjdk:21-jdk-slim</image>
                     </from>
                     <to>
+                        <!-- 将构建后的 Docker 镜像推送至阿里云容器镜像服务 -->
                         <image>registry.cn-hangzhou.aliyuncs.com/inlym/spring-boot-lab-docker</image>
+
+                        <!-- 鉴权信息在命令行中带入，此处仅演示参数 -->
                         <auth>
                             <username>xxxxxx</username>
                             <password>xxxxxx</password>

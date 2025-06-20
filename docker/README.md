@@ -24,8 +24,20 @@ mvn compile jib:build \
     -Djib.to.auth.password=$PASSWORD
 ```
 
+备注：如果需要使用代理，可再指定代理地址和端口号参数，示例如下：
+
+```bash
+mvn compile jib:build \
+    -Djib.to.auth.username=$USERNAME \
+    -Djib.to.auth.password=$PASSWORD \
+    -Dhttp.proxyHost=127.0.0.1 \
+    -Dhttp.proxyPort=7890 \
+    -Dhttps.proxyHost=127.0.0.1 \
+    -Dhttps.proxyPort=7890
+```
+
 ## 运行
 
 ```bash
-docker run --network=host registry.cn-hangzhou.aliyuncs.com/inlym/spring-boot-lab-docker:latest
+docker run -p 23010:8080 registry.cn-hangzhou.aliyuncs.com/inlym/spring-boot-lab-docker:latest
 ```
